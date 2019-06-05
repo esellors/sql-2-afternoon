@@ -124,9 +124,56 @@
 -- DELETE FROM practice_delete 
 -- WHERE value = 150;
 
+-- CREATE TABLE users (
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(50),
+--   email VARCHAR(50)
+--   )
+  
+-- CREATE TABLE products (
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(50),
+--   price NUMERIC
+--   )
 
+-- CREATE TABLE orders (
+--   id INT PRIMARY KEY REFERENCES products(id),
+--   name VARCHAR(50),
+--   price NUMERIC
+-- )
 
+-- INSERT INTO users (name, email)
+-- VALUES ('Joe', 'adf@gmail.com'), ('Megan', 'asfrg2@aol.com'), ('Mahk', 'chevysux@toyota.com')
 
+-- INSERT INTO products (name, price)
+-- VALUES ('Pens', 234.23), ('Staples', 23), ('Gloves', 19.23)
 
+-- INSERT INTO orders (id, name, price)
+-- VALUES (1, 'Pens', 234.23), (2, 'Staples', 23), (3, 'Gloves', 1923)
+
+-- SELECT * FROM orders
+-- WHERE id = 1
+
+-- SELECT * FROM orders
+
+-- SELECT SUM(price) FROM orders
+-- WHERE id = 1
+
+-- ALTER TABLE orders
+-- ADD FOREIGN KEY (id) REFERENCES users (id);
+
+-- ALTER TABLE orders
+-- ADD FOREIGN KEY (id) REFERENCES users (id);
+
+-- ALTER TABLE users
+-- ADD FOREIGN KEY (id) REFERENCES orders (id);
+
+-- SELECT * FROM users
+-- JOIN orders ON users.id = orders.id
+
+-- SELECT COUNT(*), users.name
+-- FROM orders
+-- JOIN users ON users.id = orders.id
+-- GROUP BY users.name
 
 
