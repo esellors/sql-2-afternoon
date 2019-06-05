@@ -77,8 +77,23 @@
 -- WHERE genre_id = (SELECT genre_id FROM genre WHERE name = 'Metal') 
 -- AND composer IS NULL;
 
-               
-
+--GROUP BY
+--#1
+-- SELECT COUNT(*), g.name
+-- FROM track t
+-- JOIN genre g ON t.genre_id = g.genre_id
+-- GROUP BY g.name;
+--#2
+-- SELECT COUNT(*), g.name
+-- FROM track t
+-- JOIN genre g ON g.genre_id = t.genre_id
+-- WHERE g.name = 'Pop' OR g.name = 'Rock'
+-- GROUP BY g.name;
+--#3
+-- SELECT COUNT(*), artist.name
+-- FROM album
+-- JOIN artist ON artist.artist_id = album.artist_id
+-- GROUP BY artist.name;
 
 
 
